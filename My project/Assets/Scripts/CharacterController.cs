@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem; 
+using UnityEngine.UI:
 
 public class CharacterController : MonoBehaviour
 {
     private InputAction _moveAction;
+    
+    public bool mouse_over = false;
 
     public float moveSpeed = 5f; 
-    
-    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,5 +23,13 @@ public class CharacterController : MonoBehaviour
         Vector2 input = _moveAction.ReadValue<Vector2>();
         
         Debug.Log(input.ToString());
+        
+        Debug.Log(mouse_over);
+        
+    }
+    
+    private void OnMouseEnter()
+    {
+        mouse_over = true;
     }
 }
